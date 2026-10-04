@@ -18,7 +18,7 @@
  * "Anyone" can reach the URL, which is why every request must carry the SECRET.
  */
 
-const SECRET = "kjhgfsaqwertyu0987654esdfghj";
+const SECRET = "REPLACE_WITH_YOUR_SECRET";
 
 const TABS = {
   Registrations: ["timestamp", "name", "email", "college", "year", "source"],
