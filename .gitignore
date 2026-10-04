@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+
+# Secrets: NEVER commit these. Keys live in .env locally and in Vercel env vars when deployed.
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Logs and editor files
+logs
+*.log
+npm-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.local

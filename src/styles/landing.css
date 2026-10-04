@@ -1,0 +1,212 @@
+/* LANDING PAGE styles. Mobile-first: base rules = phone; @media (min-width) adds desktop layout. */
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: var(--space-7) var(--space-8);
+  background-image: radial-gradient(var(--line) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+.hero__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+.hero__hl {
+  background: var(--pop);
+  padding: 0 0.2em;
+  border-radius: 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hero__sub {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 34rem;
+}
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-block: var(--space-5);
+}
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero__preview {
+  transform: rotate(1.5deg);
+}
+.hero__preview-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+}
+.hero__preview-score {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  margin-block: var(--space-3);
+}
+.hero__preview-score small {
+  font-size: 1.4rem;
+  color: var(--ink-muted);
+}
+.hero__preview-line {
+  margin: 0 0 0.5rem;
+}
+
+/* ---------- Grids ---------- */
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+.outcome__icon {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-2);
+}
+
+/* ---------- Prizes ---------- */
+.prize {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+.prize__rank {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.prize__amount {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1.1;
+}
+.prize__label {
+  color: var(--ink-soft);
+}
+.lucky {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+  margin-top: var(--space-5);
+  background: var(--card);
+}
+.lucky h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- Urgency ---------- */
+.countdown {
+  display: flex;
+  gap: var(--space-3);
+}
+.countdown__unit {
+  flex: 1;
+  text-align: center;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.2rem;
+}
+.countdown__num {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 7vw, 2.2rem);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #cfd2e3;
+}
+.countdown__done {
+  font-weight: 700;
+  color: var(--bad);
+}
+
+.seats__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+.seats__left {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+}
+.seats__bar {
+  height: 18px;
+  background: var(--paper);
+  border: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.seats__fill {
+  height: 100%;
+  background: var(--brand);
+  transition: width 0.6s ease;
+}
+.seats__note {
+  margin: var(--space-2) 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+/* ---------- Register ---------- */
+.register__wrap {
+  max-width: 520px;
+}
+.register__wrap .card {
+  color: var(--ink);
+}
+
+/* ---------- Thanks / 404 ---------- */
+.thanks {
+  padding-block: var(--space-7);
+  max-width: 760px;
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 760px) {
+  .hero__grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .lucky {
+    grid-template-columns: 1fr auto;
+  }
+}
+@media (min-width: 560px) and (max-width: 759px) {
+  .grid--4,
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

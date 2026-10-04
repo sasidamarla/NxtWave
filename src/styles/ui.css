@@ -1,0 +1,330 @@
+/* UI KIT: reusable pieces (Button, Card, Section, Navbar, Footer, form fields, alerts). */
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.95rem 1.4rem;
+  min-height: 48px; /* comfortable thumb target */
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.btn--primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn--secondary {
+  background: var(--card);
+  color: var(--ink);
+}
+.btn--pop {
+  background: var(--pop);
+  color: var(--ink);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: none;
+  border-color: transparent;
+}
+.btn--ghost:hover:not(:disabled) {
+  box-shadow: none;
+  transform: none;
+  background: var(--brand-tint);
+}
+.btn--sm {
+  padding: 0.6rem 1rem;
+  min-height: 40px;
+  font-size: 0.92rem;
+  box-shadow: var(--shadow-sm);
+}
+.btn--block {
+  width: 100%;
+}
+
+.spinner {
+  width: 1.1em;
+  height: 1.1em;
+  border: 3px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-5);
+}
+.card--brand {
+  background: var(--brand-tint);
+}
+.card--pop {
+  background: var(--pop-tint);
+}
+.card--flat {
+  box-shadow: none;
+}
+
+/* ---------- Section ---------- */
+.section {
+  padding-block: var(--space-7);
+}
+.section--tint {
+  background: var(--brand-tint);
+  border-block: var(--border);
+}
+.section--ink {
+  background: var(--ink);
+  color: #fff;
+}
+.section--ink .section__kicker {
+  background: var(--pop);
+}
+.section__head {
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+}
+.section__kicker {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--pop);
+  border: var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  margin-bottom: var(--space-3);
+}
+.section__intro {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+.section--ink .section__intro {
+  color: #d7d9e6;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: var(--border);
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 64px;
+}
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.navbar__logo {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--brand);
+  color: #fff;
+  border: var(--border);
+  border-radius: 9px;
+  font-size: 0.85rem;
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.navbar__link {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
+}
+.navbar__link:hover,
+.navbar__link[aria-current='page'] {
+  background: var(--brand-tint);
+}
+.navbar__link--hide-sm {
+  display: none;
+}
+@media (min-width: 640px) {
+  .navbar__link--hide-sm {
+    display: inline-block;
+  }
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: var(--border);
+  background: var(--card);
+  padding-block: var(--space-6);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+  justify-content: space-between;
+}
+.footer a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Forms ---------- */
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 0.9rem;
+  min-height: 48px;
+}
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.field--error input,
+.field--error select,
+.field--error textarea {
+  border-color: var(--bad);
+  background: var(--bad-tint);
+}
+.field__hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+.field__error {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bad);
+}
+.field__counter {
+  float: right;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-weight: 500;
+}
+.alert--error {
+  background: var(--bad-tint);
+  border-color: var(--bad);
+  color: #7d1a11;
+}
+.alert--success {
+  background: var(--good-tint);
+  border-color: var(--good);
+  color: #0a5a31;
+}
+.alert--info {
+  background: var(--brand-tint);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: var(--card);
+  border: var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
+/* Navbar must never wrap on small phones */
+.navbar__brand,
+.navbar__link {
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .navbar__inner {
+    gap: var(--space-2);
+  }
+  .navbar__brand {
+    font-size: 1rem;
+  }
+  .navbar__link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.4rem;
+  }
+  .navbar .btn--sm {
+    padding: 0.5rem 0.75rem;
+  }
+}

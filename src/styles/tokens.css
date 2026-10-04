@@ -1,0 +1,53 @@
+/*
+  DESIGN TOKENS: every colour, font, spacing and radius lives here as a CSS variable.
+  Components never hard-code "#5b3df5"; they say var(--brand). To re-theme the
+  whole site you change this one file.
+
+  Identity: "warm paper + hard ink". Off-white background, near-black outlines,
+  violet as the brand colour, amber for money/prizes. Chunky borders and offset
+  shadows give it a friendly, sticker-like feel that suits students.
+*/
+:root {
+  /* Colour */
+  --ink: #101323;
+  --ink-soft: #3d4259;
+  --ink-muted: #5f647a;
+  --paper: #faf8f3;
+  --card: #ffffff;
+  --line: #e4dfd3;
+
+  --brand: #5b3df5;
+  --brand-dark: #4328d4;
+  --brand-tint: #ece8ff;
+
+  --pop: #ffb400;
+  --pop-tint: #fff2cc;
+
+  --good: #0d8a4a;
+  --good-tint: #dff5e8;
+  --bad: #c42a1c;
+  --bad-tint: #fde8e5;
+
+  /* Type: Space Grotesk for headings (character), Inter for body (readability) */
+  --font-head: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  /* Shape */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --border: 2px solid var(--ink);
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-sm: 2px 2px 0 var(--ink);
+
+  --max-w: 1080px;
+}
